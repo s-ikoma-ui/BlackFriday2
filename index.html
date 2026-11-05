@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOYAMA GARDEN | BLACK FRIDAY SPECIAL SALE 2026</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;0,900;1,800;1,900&family=Noto+Sans+JP:wght@400;500;700;900&family=Caveat:wght@600;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              yellow: '#FACC15',
+              dark: '#0c0f12',
+              card: '#161a20',
+              wood: '#2a1e17'
+            }
+          },
+          fontFamily: {
+            sans: ['"Noto Sans JP"', 'sans-serif'],
+            montserrat: ['"Montserrat"', 'sans-serif'],
+            script: ['"Caveat"', 'cursive'],
+            serifLogo: ['"Cinzel"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* テキストのアウトライン（ストローク）スタイル */
+    .text-outline-white {
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.85);
+      color: transparent;
+      transition: all 0.3s ease;
+    }
+    @media (min-width: 768px) {
+      .text-outline-white {
+        -webkit-text-stroke: 2px rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    /* 光のランタンエフェクト */
+    .glow-warm {
+      box-shadow: 0 0 60px 15px rgba(250, 204, 21, 0.25);
+    }
+    
+    .glow-badge {
+      box-shadow: 0 10px 30px -5px rgba(250, 204, 21, 0.45);
+    }
+
+    /* スクロールバーのカスタマイズ */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0c0f12;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #272d36;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #facc15;
+    }
+
+    /* 手書き文字の角度とシャドウ */
+    .hero-script {
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(250, 204, 21, 0.5);
+      transform: rotate(-9deg) skewX(-4deg);
+    }
+  </style>
+</head>
+<body class="bg-[#0b0e13] text-gray-200 font-sans antialiased selection:bg-brand-yellow selection:text-black min-h-screen flex flex-col">
+
+  <!-- ヘッダー通知バー -->
+  <div class="bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 border-b border-white/10 text-xs py-2 px-4 text-center tracking-wider text-gray-300 flex items-center justify-center gap-2">
+    <span class="inline-block w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
+    <span class="font-bold text-brand-yellow">秋庭をアップデートする、年に一度のおトクなブラックフライデーセール開催中</span>
+  </div>
+
+  <!-- ナビゲーションバー -->
+  <header class="sticky top-0 z-50 bg-[#0b0e13]/90 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- ロゴ部分 -->
+      <a href="#" class="flex flex-col group">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl font-black tracking-widest text-white group-hover:text-brand-yellow transition">青山ガーデン</span>
+        </div>
+        <span class="text-[9px] tracking-[0.25em] text-gray-400 font-serifLogo font-medium">TAKASHO CO., LTD.</span>
+      </a>
+
+      <!-- ナビゲーションリンク -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+        <a href="#featured" class="hover:text-brand-yellow transition">目玉商品</a>
+        <a href="#categories" class="hover:text-brand-yellow transition">カテゴリ別</a>
+        <a href="#coupon" class="hover:text-brand-yellow transition">限定クーポン</a>
+        <a href="#styling" class="hover:text-brand-yellow transition">秋庭スタイリング</a>
+      </nav>
+
+      <!-- アクションボタン -->
+      <div class="flex items-center gap-4">
+        <button id="cartBtn" class="relative p-2.5 rounded-full bg-white/5 hover:bg-white/15 text-white transition">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-brand-yellow text-black text-[11px] font-black w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+        </button>
+        <a href="#featured" class="hidden sm:inline-flex items-center gap-2 bg-brand-yellow hover:bg-yellow-400 text-black font-bold text-sm px-5 py-2.5 rounded-full transition transform active:scale-95 shadow-lg shadow-yellow-500/20">
+          セール会場へ
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="flex-grow">
+
+    <!-- HERO セクション（画像のデザインと世界観を忠実に反映） -->
+    <section class="relative min-h-[640px] lg:h-[88vh] overflow-hidden flex items-center bg-[#07090c] border-b border-white/10">
+      
+      <!-- 背景写真レイヤー (温かみのある夜のテラス・アウトドアリビング写真) -->
+      <div class="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop" 
+          alt="Warm Autumn Garden Night" 
+          class="w-full h-full object-cover object-center filter brightness-[0.52] contrast-[1.15] saturate-[1.1]"
+        />
+        <!-- グラデーションオーバーレイ（奥行きとテキスト視認性を強化） -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0b0e13] via-[#0b0e13]/40 to-[#0b0e13]/70"></div>
+        <div class="absolute inset-0 bg-radial from-transparent via-[#0b0e13]/30 to-[#0b0e13]/80"></div>
+      </div>
+
+      <!-- デッキランプの温かい照明エフェクト -->
+      <div class="absolute bottom-24 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-yellow-500/10 blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
+        <div class="flex flex-col items-center text-center">
+
+          <!-- 上部サブタイトル -->
+          <div class="inline-flex items-center gap-2 mb-3 bg-black/60 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full">
+            <span class="text-brand-yellow font-bold text-xs md:text-sm tracking-wider">
+              | 秋庭をアップデートする、年に一度のおトクなブラックフライデーセール
+            </span>
+          </div>
+
+          <!-- タイポグラフィセンター (巨大な白枠線 "BLACK FRIDAY" + 重ねた黄色の筆記体 "Special Sale!!") -->
+          <div class="relative my-4 select-none w-full max-w-4xl py-6 md:py-10">
+            
+            <!-- アウトライン BLACK FRIDAY -->
+            <div class="flex flex-col items-center leading-none">
+              <h1 class="font-montserrat font-black text-6xl sm:text-8xl md:text-[130px] lg:text-[160px] tracking-tight uppercase text-outline-white drop-shadow-2xl">
+                BLACK
+              </h1>
+              <h1 class="font-montserrat font-black text-6xl sm:text-8xl md:text-[130px] lg:text-[160px] tracking-tight uppercase text-outline-white -mt-3 sm:-mt-6 md:-mt-10 drop-shadow-2xl">
+                FRIDAY
+              </h1>
+            </div>
+
+            <!-- 重なるスクリプト文字 Special Sale!! -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+              <span class="font-script text-brand-yellow text-6xl sm:text-8xl md:text-9xl lg:text-[130px] font-bold hero-script tracking-wide whitespace-nowrap">
+                Special Sale!!
+              </span>
+            </div>
+
+            <!-- おトクな10日間 イエローサークルバッジ -->
+            <div class="absolute top-2 right-2 sm:right-6 md:right-12 lg:right-20 z-30 transform hover:scale-105 transition duration-300">
+              <div class="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full bg-brand-yellow text-black flex flex-col items-center justify-center font-black p-2 shadow-2xl glow-badge border-4 border-black/20">
+                <span class="text-xs sm:text-sm md:text-base tracking-tighter leading-none mb-0.5">おトクな</span>
+                <div class="flex items-baseline leading-none">
+                  <span class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter">10</span>
+                  <div class="flex flex-col text-[11px] sm:text-xs font-bold pl-0.5 leading-none">
+                    <span>日</span>
+                    <span>間</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- サブブランド / Faire 表記 -->
+            <div class="absolute bottom-1 right-4 md:right-14 text-right">
+              <span class="font-montserrat font-black text-white text-xl sm:text-2xl md:text-3xl tracking-tight drop-shadow-md">Faire</span>
+            </div>
+          </div>
+
+          <!-- 期間表示バー (11.20 金 13:00 >>> 11.30 月 09:59 まで) -->
+          <div class="w-full max-w-3xl mt-4 bg-black/80 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row items-center justify-between gap-4 shadow-2xl">
+            <div class="flex items-center flex-wrap justify-center gap-2 sm:gap-3 text-white">
+              
+              <!-- 開始 -->
+              <div class="flex items-center gap-1.5 font-montserrat">
+                <span class="text-2xl sm:text-3xl font-extrabold tracking-tight">11.20</span>
+                <span class="bg-white text-black font-bold text-xs sm:text-sm px-1.5 py-0.5 rounded">金</span>
+                <span class="text-base sm:text-lg font-bold">13:00</span>
+              </div>
+
+              <!-- 矢印 -->
+              <span class="text-brand-yellow font-extrabold tracking-widest px-1">＞＞＞</span>
+
+              <!-- 終了 -->
+              <div class="flex items-center gap-1.5 font-montserrat">
+                <span class="text-2xl sm:text-3xl font-extrabold tracking-tight">11.30</span>
+                <span class="bg-white text-black font-bold text-xs sm:text-sm px-1.5 py-0.5 rounded">月</span>
+                <span class="text-base sm:text-lg font-bold">09:59</span>
+                <span class="text-xs text-gray-300 font-normal ml-0.5">まで</span>
+              </div>
+            </div>
+
+            <!-- CTAボタン -->
+            <a href="#featured" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-brand-yellow hover:bg-yellow-400 text-black font-black text-base px-7 py-3 rounded-xl transition duration-200 transform hover:-translate-y-0.5 shadow-lg shadow-yellow-500/30">
+              <span>詳細はこちら</span>
+              <i data-lucide="play" class="w-4 h-4 fill-black"></i>
+            </a>
+          </div>
+
+          <!-- カウントダウンタイマー -->
+          <div class="mt-8 flex items-center justify-center gap-3 sm:gap-4 text-center">
+            <span class="text-xs uppercase tracking-widest text-gray-400 font-bold mr-2">Sale Ends In:</span>
+            <div class="bg-white/10 backdrop-blur border border-white/10 px-3 py-1.5 rounded-lg">
+              <span id="timer-days" class="font-montserrat font-bold text-lg sm:text-xl text-brand-yellow">09</span>
+              <span class="text-[10px] text-gray-400 block -mt-1">DAYS</span>
+            </div>
+            <span class="font-bold text-brand-yellow">:</span>
+            <div class="bg-white/10 backdrop-blur border border-white/10 px-3 py-1.5 rounded-lg">
+              <span id="timer-hours" class="font-montserrat font-bold text-lg sm:text-xl text-brand-yellow">18</span>
+              <span class="text-[10px] text-gray-400 block -mt-1">HRS</span>
+            </div>
+            <span class="font-bold text-brand-yellow">:</span>
+            <div class="bg-white/10 backdrop-blur border border-white/10 px-3 py-1.5 rounded-lg">
+              <span id="timer-mins" class="font-montserrat font-bold text-lg sm:text-xl text-brand-yellow">42</span>
+              <span class="text-[10px] text-gray-400 block -mt-1">MIN</span>
+            </div>
+            <span class="font-bold text-brand-yellow">:</span>
+            <div class="bg-white/10 backdrop-blur border border-white/10 px-3 py-1.5 rounded-lg">
+              <span id="timer-secs" class="font-montserrat font-bold text-lg sm:text-xl text-brand-yellow">15</span>
+              <span class="text-[10px] text-gray-400 block -mt-1">SEC</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 特典バナー・クーポンセクション -->
+    <section id="coupon" class="py-10 bg-brand-card border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="bg-gradient-to-br from-neutral-900 to-[#12151c] p-6 rounded-2xl border border-white/10 flex items-center justify-between relative overflow-hidden group">
+            <div class="relative z-10">
+              <span class="bg-brand-yellow text-black text-[10px] font-black uppercase px-2 py-0.5 rounded">Benefit 01</span>
+              <h3 class="text-xl font-bold mt-2 text-white">全品送料無料</h3>
+              <p class="text-xs text-gray-400 mt-1">大型ガーデンファニチャーもすべて対象</p>
+            </div>
+            <div class="text-brand-yellow/20 group-hover:text-brand-yellow/30 transition text-5xl">
+              <i data-lucide="truck" class="w-12 h-12"></i>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-neutral-900 to-[#12151c] p-6 rounded-2xl border border-brand-yellow/30 relative overflow-hidden group">
+            <div class="relative z-10 flex flex-col justify-between h-full">
+              <div class="flex items-center justify-between">
+                <span class="bg-brand-yellow text-black text-[10px] font-black uppercase px-2 py-0.5 rounded">Benefit 02</span>
+                <span class="text-xs text-brand-yellow font-bold">先着500名様</span>
+              </div>
+              <div class="my-2">
+                <h3 class="text-xl font-bold text-white"><span class="text-brand-yellow font-montserrat text-2xl font-black">¥3,000</span> OFF クーポン</h3>
+                <p class="text-xs text-gray-400">税込30,000円以上のお買い物で利用可</p>
+              </div>
+              <button onclick="claimCoupon('BF2026-3000')" class="w-full mt-2 py-2 bg-white/10 hover:bg-brand-yellow hover:text-black text-white text-xs font-bold rounded-lg transition border border-white/20 flex items-center justify-center gap-2">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span>コードを取得: BF2026-3000</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-neutral-900 to-[#12151c] p-6 rounded-2xl border border-white/10 flex items-center justify-between relative overflow-hidden group">
+            <div class="relative z-10">
+              <span class="bg-brand-yellow text-black text-[10px] font-black uppercase px-2 py-0.5 rounded">Benefit 03</span>
+              <h3 class="text-xl font-bold mt-2 text-white">会員ポイント 10倍</h3>
+              <p class="text-xs text-gray-400 mt-1">次回のお買い物ですぐに使えるポイント</p>
+            </div>
+            <div class="text-brand-yellow/20 group-hover:text-brand-yellow/30 transition text-5xl">
+              <i data-lucide="sparkles" class="w-12 h-12"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 目玉セール商品 (Featured Products) -->
+    <section id="featured" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="flex items-center gap-2 text-brand-yellow text-xs font-bold tracking-widest uppercase mb-1">
+            <i data-lucide="flame" class="w-4 h-4"></i>
+            Special Pick Up
+          </div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">秋庭を彩る、注目セールアイテム</h2>
+        </div>
+        <p class="text-gray-400 text-sm mt-3 md:mt-0 max-w-md">
+          夜のテラスやウッドデッキを心地よいアウトドアリビングに変える、厳選のファニチャー＆照明を最大50%OFFで。
+        </p>
+      </div>
+
+      <!-- 商品グリッド -->
+      <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- JSで動的レンダリング -->
+      </div>
+    </section>
+
+    <!-- 秋庭スタイリング提案 (画像の世界観コンテンツ) -->
+    <section id="styling" class="py-16 bg-[#0f131a] border-t border-b border-white/10 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow px-3 py-1 rounded-full text-xs font-bold tracking-wider">
+              AUTUMN GARDEN LIFE
+            </div>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+              夜風が心地よい季節。<br>
+              お庭をもうひとつの<br>
+              <span class="text-brand-yellow">「リビング」</span>へ。
+            </h2>
+            <p class="text-gray-300 text-sm leading-relaxed">
+              日が落ちて涼しさを増す秋の夜は、テラスやウッドデッキで家族と語らう贅沢な時間。
+              コンパクトに折りたためるアウトドアチェア、柔らかな光を灯すポータブルランタン、
+              温かなコーヒーテーブルを揃えるだけで、日常の庭が特別な憩いの場に生まれ変わります。
+            </p>
+            
+            <div class="pt-4 border-t border-white/10 grid grid-cols-2 gap-4">
+              <div>
+                <span class="text-2xl font-black text-white font-montserrat">Warmth</span>
+                <p class="text-xs text-gray-400 mt-1">電球色の柔らかなコードレスライトで穏やかな空間演出</p>
+              </div>
+              <div>
+                <span class="text-2xl font-black text-white font-montserrat">Relax</span>
+                <p class="text-xs text-gray-400 mt-1">耐久性と寛ぎを両立したフォールディングウッドチェア</p>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <a href="#featured" class="inline-flex items-center gap-2 text-brand-yellow hover:text-white font-bold text-sm transition group">
+                スタイリング使用アイテムをすべて見る
+                <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Garden night lamp">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="text-white text-xs font-bold">充電式 LEDポータブルランタン</span>
+                </div>
+              </div>
+              <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+                <img src="https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?q=80&w=800&auto=format&fit=crop" class="w-full h-44 object-cover group-hover:scale-105 transition duration-500" alt="Wood table set">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="text-white text-xs font-bold">天然木 ローサイドテーブル</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4 pt-6">
+              <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+                <img src="https://images.unsplash.com/photo-1470246973918-29a93221c455?q=80&w=800&auto=format&fit=crop" class="w-full h-44 object-cover group-hover:scale-105 transition duration-500" alt="Cozy autumn blanket">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="text-white text-xs font-bold">難燃ウールブランケット</span>
+                </div>
+              </div>
+              <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group">
+                <img src="https://images.unsplash.com/photo-1519974719765-e6559eac2575?q=80&w=800&auto=format&fit=crop" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Deck chair set">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
+                  <span class="text-white text-xs font-bold">リラックス フォールディングチェア</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- カテゴリー別セール -->
+    <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-extrabold text-white">CATEGORY SALE</h2>
+        <p class="text-gray-400 text-sm mt-2">お庭のレイアウトに合わせて選べる4つの主力カテゴリー</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        
+        <div class="group relative rounded-2xl overflow-hidden bg-neutral-900 border border-white/10 p-5 hover:border-brand-yellow/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-yellow mb-4 group-hover:bg-brand-yellow group-hover:text-black transition">
+            <i data-lucide="armchair" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">ガーデンファニチャー</h3>
+          <p class="text-xs text-brand-yellow font-montserrat font-bold mt-1">UP TO 45% OFF</p>
+          <span class="text-[11px] text-gray-400 block mt-2">チェア / テーブル / ソファ</span>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden bg-neutral-900 border border-white/10 p-5 hover:border-brand-yellow/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-yellow mb-4 group-hover:bg-brand-yellow group-hover:text-black transition">
+            <i data-lucide="lamp" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">ガーデンライト・照明</h3>
+          <p class="text-xs text-brand-yellow font-montserrat font-bold mt-1">UP TO 50% OFF</p>
+          <span class="text-[11px] text-gray-400 block mt-2">ソーラー / 充電式ランタン / ポールライト</span>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden bg-neutral-900 border border-white/10 p-5 hover:border-brand-yellow/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-yellow mb-4 group-hover:bg-brand-yellow group-hover:text-black transition">
+            <i data-lucide="sun" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">シェード・パラソル</h3>
+          <p class="text-xs text-brand-yellow font-montserrat font-bold mt-1">UP TO 35% OFF</p>
+          <span class="text-[11px] text-gray-400 block mt-2">日よけオーニング / スクリーン</span>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden bg-neutral-900 border border-white/10 p-5 hover:border-brand-yellow/50 transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-yellow/10 flex items-center justify-center text-brand-yellow mb-4 group-hover:bg-brand-yellow group-hover:text-black transition">
+            <i data-lucide="flower-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-bold text-white text-base">プランター・装飾小物</h3>
+          <p class="text-xs text-brand-yellow font-montserrat font-bold mt-1">UP TO 30% OFF</p>
+          <span class="text-[11px] text-gray-400 block mt-2">大型植木鉢 / フェンス / デッキタイル</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ニュースレター登録セクション -->
+    <section class="py-14 bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 border-t border-white/10">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h3 class="text-2xl font-bold text-white">セール速報＆追加タイムセール通知を受け取る</h3>
+        <p class="text-gray-400 text-xs sm:text-sm mt-2">メールアドレスを登録して、数量限定ゲリラクーポンの情報を見逃さないようにしましょう。</p>
+        
+        <form onsubmit="handleSubscribe(event)" class="mt-6 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+          <input 
+            type="email" 
+            required 
+            placeholder="メールアドレスを入力" 
+            class="flex-1 bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-yellow placeholder-gray-500"
+          >
+          <button type="submit" class="bg-brand-yellow hover:bg-yellow-400 text-black font-bold px-6 py-3 rounded-xl text-sm transition">
+            登録する
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- カートドロワー（サイドバー） -->
+  <div id="cartModal" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+    <div id="cartBackdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity"></div>
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div id="cartPanel" class="w-screen max-w-md bg-[#13171e] text-white border-l border-white/10 p-6 flex flex-col pointer-events-auto transform translate-x-full transition duration-300 ease-in-out">
+        
+        <div class="flex items-center justify-between pb-4 border-b border-white/10">
+          <div class="flex items-center gap-2">
+            <i data-lucide="shopping-bag" class="text-brand-yellow w-5 h-5"></i>
+            <h3 class="font-bold text-lg">ショッピングカート</h3>
+          </div>
+          <button id="closeCartBtn" class="p-1 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+        <div id="cartItemsList" class="flex-grow overflow-y-auto py-4 space-y-4">
+          <!-- カート内アイテム -->
+          <div class="text-center py-12 text-gray-400 text-sm">
+            カートに商品が入っていません
+          </div>
+        </div>
+
+        <div class="pt-4 border-t border-white/10 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-gray-400 text-sm">合計（税込）</span>
+            <span id="cartTotalPrice" class="font-montserrat font-black text-2xl text-brand-yellow">¥0</span>
+          </div>
+          <button onclick="checkout()" class="w-full py-3.5 bg-brand-yellow hover:bg-yellow-400 text-black font-extrabold rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-yellow-500/20">
+            <span>ご注文手続きへ進む</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- トースト通知 -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-brand-yellow text-black font-bold px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+    <i data-lucide="check-circle" class="w-5 h-5 text-black"></i>
+    <span id="toastMessage">アイテムを追加しました</span>
+  </div>
+
+  <!-- フッター -->
+  <footer class="bg-[#07090c] border-t border-white/10 py-12 text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <span class="text-xl font-black tracking-widest text-white">青山ガーデン</span>
+        <span class="text-[9px] block tracking-[0.2em] text-gray-400 font-serifLogo">TAKASHO CO., LTD.</span>
+        <p class="mt-4 text-gray-400 leading-relaxed">
+          心地よいガーデンライフとアウトドア空間を創造する、株式会社タカショーの公式オンラインストアです。
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-3">セール案内</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-brand-yellow transition">開催概要・規約</a></li>
+          <li><a href="#" class="hover:text-brand-yellow transition">配送・お届け目安について</a></li>
+          <li><a href="#" class="hover:text-brand-yellow transition">大型商品の組み立てサポート</a></li>
+          <li><a href="#" class="hover:text-brand-yellow transition">よくあるご質問</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-3">商品カテゴリー</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="hover:text-brand-yellow transition">フォールディングチェア＆テーブル</a></li>
+          <li><a href="#" class="hover:text-brand-yellow transition">屋外LEDライト・ランタン</a></li>
+          <li><a href="#" class="hover:text-brand-yellow transition">ウッドデッキ・テラスタイル</a></li>
+          <li><a href="#" class="hover:text-brand-yellow transition">プライベートスクリーン</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-bold mb-3">お問い合わせ</h4>
+        <p class="text-gray-400 mb-2">営業時間: 平日 10:00 - 17:00</p>
+        <p class="text-gray-400 mb-4">※セール期間中はお問い合わせが混み合う場合がございます。</p>
+        <div class="flex items-center gap-4 text-lg">
+          <a href="#" class="hover:text-brand-yellow transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-brand-yellow transition"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+          <a href="#" class="hover:text-brand-yellow transition"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 pt-6 border-t border-white/5 text-center text-gray-500">
+      &copy; TAKASHO CO., LTD. All Rights Reserved. Black Friday Campaign 2026.
+    </div>
+  </footer>
+
+  <script>
+    // Lucideアイコンの初期化
+    lucide.createIcons();
+
+    // セール対象商品データ
+    const products = [
+      {
+        id: 1,
+        title: "フォールディング ウッドデッキチェア",
+        subtitle: "天然木アカシア製 / 折りたたみ仕様",
+        originalPrice: 19800,
+        salePrice: 12800,
+        discount: "35% OFF",
+        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop",
+        badge: "人気 No.1"
+      },
+      {
+        id: 2,
+        title: "ポータブル 充電式テラスランタン",
+        subtitle: "無段階調光 / 防雨IP54 / 電球色",
+        originalPrice: 12800,
+        salePrice: 6400,
+        discount: "50% OFF",
+        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=800&auto=format&fit=crop",
+        badge: "半額特価"
+      },
+      {
+        id: 3,
+        title: "アウトドア カフェテーブル（天板天然木）",
+        subtitle: "コンパクト収納 / 耐荷重40kg",
+        originalPrice: 24800,
+        salePrice: 16800,
+        discount: "32% OFF",
+        image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop",
+        badge: "残りわずか"
+      },
+      {
+        id: 4,
+        title: "難燃性 ボアライナーアウトドアブランケット",
+        subtitle: "秋・冬の夜庭キャンプにも最適",
+        originalPrice: 8800,
+        salePrice: 5200,
+        discount: "40% OFF",
+        image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
+        badge: "注目アイテム"
+      }
+    ];
+
+    // カート状態
+    let cart = [];
+
+    // 商品一覧のレンダリング
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = products.map(product => `
+        <div class="bg-brand-card rounded-2xl overflow-hidden border border-white/10 hover:border-brand-yellow/40 transition duration-300 flex flex-col group shadow-xl">
+          <!-- 商品画像 -->
+          <div class="relative overflow-hidden aspect-square bg-neutral-900">
+            <img 
+              src="${product.image}" 
+              alt="${product.title}" 
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+            <span class="absolute top-3 left-3 bg-brand-yellow text-black text-[11px] font-black px-2.5 py-1 rounded-md shadow-md">
+              ${product.badge}
+            </span>
+            <span class="absolute top-3 right-3 bg-black/80 backdrop-blur-md text-white text-[11px] font-montserrat font-black px-2 py-1 rounded border border-white/20">
+              ${product.discount}
+            </span>
+          </div>
+
+          <!-- 商品情報 -->
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <p class="text-[11px] text-gray-400 mb-1">${product.subtitle}</p>
+              <h3 class="font-bold text-white text-base group-hover:text-brand-yellow transition leading-snug">
+                ${product.title}
+              </h3>
+            </div>
+
+            <div class="pt-4 mt-4 border-t border-white/5 flex items-end justify-between">
+              <div>
+                <span class="text-xs text-gray-500 line-through block font-montserrat">
+                  ¥${product.originalPrice.toLocaleString()}
+                </span>
+                <div class="flex items-baseline gap-1 text-brand-yellow">
+                  <span class="text-xs font-bold">¥</span>
+                  <span class="text-2xl font-black font-montserrat">${product.salePrice.toLocaleString()}</span>
+                  <span class="text-[10px] text-gray-400 font-normal">税込</span>
+                </div>
+              </div>
+
+              <button 
+                onclick="addToCart(${product.id})"
+                class="bg-white/10 hover:bg-brand-yellow hover:text-black text-white p-3 rounded-xl transition duration-200 transform active:scale-95"
+                title="カートに追加"
+              >
+                <i data-lucide="plus" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      lucide.createIcons();
+    }
+
+    // カート追加処理
+    function addToCart(productId) {
+      const item = products.find(p => p.id === productId);
+      if (!item) return;
+
+      const existingIndex = cart.findIndex(c => c.id === productId);
+      if (existingIndex > -1) {
+        cart[existingIndex].quantity += 1;
+      } else {
+        cart.push({ ...item, quantity: 1 });
+      }
+
+      updateCartUI();
+      showToast(`「${item.title}」をカートに追加しました`);
+    }
+
+    // カート更新処理
+    function updateCartUI() {
+      const totalCount = cart.reduce((acc, cur) => acc + cur.quantity, 0);
+      const totalPrice = cart.reduce((acc, cur) => acc + (cur.salePrice * cur.quantity), 0);
+
+      // バッジ更新
+      const badge = document.getElementById('cartCountBadge');
+      if (totalCount > 0) {
+        badge.innerText = totalCount;
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+
+      // 金額
+      document.getElementById('cartTotalPrice').innerText = `¥${totalPrice.toLocaleString()}`;
+
+      // カート一覧リスト
+      const listContainer = document.getElementById('cartItemsList');
+      if (cart.length === 0) {
+        listContainer.innerHTML = `
+          <div class="text-center py-16 text-gray-400 text-sm">
+            <i data-lucide="shopping-bag" class="w-10 h-10 mx-auto mb-3 opacity-30"></i>
+            カートは現在空です
+          </div>`;
+      } else {
+        listContainer.innerHTML = cart.map((item, idx) => `
+          <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+            <img src="${item.image}" class="w-16 h-16 rounded-lg object-cover">
+            <div class="flex-grow min-w-0">
+              <h4 class="text-xs font-bold text-white truncate">${item.title}</h4>
+              <p class="text-brand-yellow font-montserrat font-bold text-sm mt-0.5">¥${item.salePrice.toLocaleString()}</p>
+              <div class="flex items-center gap-2 mt-2">
+                <button onclick="changeQty(${idx}, -1)" class="w-5 h-5 rounded bg-white/10 hover:bg-white/20 flex items-center justify-center text-xs">-</button>
+                <span class="text-xs font-bold px-1">${item.quantity}</span>
+                <button onclick="changeQty(${idx}, 1)" class="w-5 h-5 rounded bg-white/10 hover:bg-white/20 flex items-center justify-center text-xs">+</button>
+              </div>
+            </div>
+            <button onclick="removeFromCart(${idx})" class="text-gray-400 hover:text-red-400 p-1">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+        `).join('');
+      }
+
+      lucide.createIcons();
+    }
+
+    // 数量変更
+    function changeQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].quantity += delta;
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    // カートから削除
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    // クーポンコード取得 (クリップボードコピー)
+    function claimCoupon(code) {
+      // document.execCommand('copy') による確実なクリップボード対応
+      const tempInput = document.createElement("input");
+      tempInput.value = code;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      showToast(`クーポンコード「${code}」をコピーしました！`);
+    }
+
+    // トースト通知の表示
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.innerText = msg;
+
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // ニュースレター送信ハンドラー
+    function handleSubscribe(e) {
+      e.preventDefault();
+      showToast("メルマガ登録が完了しました！特別コードをお送りします。");
+      e.target.reset();
+    }
+
+    // チェックアウト処理
+    function checkout() {
+      if (cart.length === 0) {
+        showToast("カートに商品が入っていません");
+        return;
+      }
+      showToast("ご注文手続き画面へ遷移します（デモ）");
+      setTimeout(() => {
+        toggleCart(false);
+      }, 1000);
+    }
+
+    // カートドロワーのトグル
+    const cartModal = document.getElementById('cartModal');
+    const cartPanel = document.getElementById('cartPanel');
+    const cartBtn = document.getElementById('cartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartBackdrop = document.getElementById('cartBackdrop');
+
+    function toggleCart(isOpen) {
+      if (isOpen) {
+        cartModal.classList.remove('pointer-events-none', 'opacity-0');
+        cartModal.classList.add('opacity-100');
+        cartPanel.classList.remove('translate-x-full');
+      } else {
+        cartModal.classList.add('pointer-events-none', 'opacity-0');
+        cartModal.classList.remove('opacity-100');
+        cartPanel.classList.add('translate-x-full');
+      }
+    }
+
+    cartBtn.addEventListener('click', () => toggleCart(true));
+    closeCartBtn.addEventListener('click', () => toggleCart(false));
+    cartBackdrop.addEventListener('click', () => toggleCart(false));
+
+    // カウントダウンタイマーのシミュレーション
+    function startCountdown() {
+      // 終了日までのカウントダウン（10日後）
+      let targetSeconds = (9 * 24 * 3600) + (18 * 3600) + (42 * 60) + 15;
+
+      setInterval(() => {
+        if (targetSeconds > 0) {
+          targetSeconds--;
+          const days = Math.floor(targetSeconds / (24 * 3600));
+          const hours = Math.floor((targetSeconds % (24 * 3600)) / 3600);
+          const minutes = Math.floor((targetSeconds % 3600) / 60);
+          const seconds = targetSeconds % 60;
+
+          document.getElementById('timer-days').innerText = String(days).padStart(2, '0');
+          document.getElementById('timer-hours').innerText = String(hours).padStart(2, '0');
+          document.getElementById('timer-mins').innerText = String(minutes).padStart(2, '0');
+          document.getElementById('timer-secs').innerText = String(seconds).padStart(2, '0');
+        }
+      }, 1000);
+    }
+
+    // 初期化ロード
+    window.onload = function() {
+      renderProducts();
+      startCountdown();
+    };
+  </script>
+</body>
+</html>
